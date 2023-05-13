@@ -12,11 +12,13 @@ html {
 body {
     background-color: hsl(185, 75%, 39%);
     font-size: 1.8rem;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Kumbh Sans', sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
 .profile {
@@ -27,7 +29,34 @@ body {
     width: 50rem;
     height: 55rem;
     border-radius: 2rem;
+    position: relative;
+    
 }
+
+.profile::before {
+    content: '';
+    background-image: url(./images/bg-pattern-top.svg);
+    width: 200rem;
+    height: 200rem;
+    background-size: cover;
+    position: absolute;
+    left:-170rem;
+    top:-145rem;
+    z-index: -1;
+}
+
+.profile::after {
+    content: '';
+    background-image: url(./images/bg-pattern-bottom.svg);
+    width: 200rem;
+    height: 200rem;
+    background-size: cover;
+    position: absolute;
+    right:-170rem;
+    bottom:-145rem;
+    z-index: -1;
+}
+
 
 .profile-top {
     background: url(./images/bg-pattern-card.svg);
